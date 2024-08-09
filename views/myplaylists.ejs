@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    
+    <%- include('partials/headBootstrap.ejs') %>
+
+    <body>
+
+        <%- include('partials/sidebar.ejs') %>
+        
+        <section class="profile-container">
+           <section class="header"> 
+                <h1> <%= userName %> 's Playlists </h1>
+                <section class="addArtist">
+                    <button class="edprimary" id="addArtistButton" data-bs-toggle="modal" data-bs-target="#addPlaylistModal">Add Playlist</button>
+                </section>
+                <section class="deleteSong">
+                    <button class="edprimary" id="addArtistButton" data-bs-toggle="modal" data-bs-target="#removePlaylistModal">remove Playlist</button>
+                </section>
+            </section>
+
+            <section class="results" id="searchResults">
+                <!-- Search results will be displayed here -->
+                <section class="albums"></section>
+            </section>
+
+            <br>
+            <br>
+            <section class="header"> 
+                <h1> Liked Playlists </h1>
+                <section class="deleteSong">
+                    <button class="edprimary" id="addArtistButton" data-bs-toggle="modal" data-bs-target="#removeLikedPlaylistModal">Remove liked playlist</button>
+                </section>
+            </section>
+
+            <section class="results" id="searchResultsLiked">
+                <!-- Search results will be displayed here -->
+                <section class="albums"></section>
+            </section>
+
+
+        </section>
+
+        <!-- Add Playlist Modal -->
+        <section class="modal fade" id="addPlaylistModal" tabindex="-1"  aria-hidden="true">
+            <section class="modal-dialog">
+                <section class="modal-content">
+                    <section class="modal-header">
+                        <h5 class="modal-title" id="addPlaylistModalLabel">Add Playlist</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </section>
+                    <section class="modal-body">
+                        <form id="addPlaylistForm">
+                            <section class="mb-3">
+                                <label for="name" class="form-label">Name: </label>
+                                <input type="text" class="form-control" id="name">
+                            </section>
+                            <section class="mb-3">
+                                <label for="name" class="form-label">Description: </label>
+                                <input type="text" class="form-control" id="description">
+                            </section>
+                            <section class="mb-3">
+                                <label for="name" class="form-label">Tags: </label>
+                                <input type="text" class="form-control" id="tags">
+                            </section>
+                            <section class="mb-3">
+                                <label class="form-check-label">Public:</label>
+                                <section class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="isPublic">
+                                    <label class="form-check-label" for="isPublic">Make playlist public</label>
+                                </section>
+                            </section>
+                            <section class="modalBtn-container">
+                                <button type="submit" class="saveBtnModal">Create Playlist</button>
+                            </section>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- Remove Playlist Modal -->
+            <section class="modal fade" id="removePlaylistModal" tabindex="-1" aria-hidden="true">
+                <section class="modal-dialog">
+                    <section class="modal-content">
+                        <section class="modal-header">
+                            <h5 class="modal-title">Remove Playlist</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </section>
+                        <section class="modal-body">
+                            <form id="removePlaylistForm">
+                                <section class="mb-3">
+                                    <label for="playlistSelect" class="form-label">Select Playlist:</label>
+                                    <select class="form-select" id="playlistSelect" aria-label="Select Playlist">
+                                        <!-- Playlist will be populated dynamically here -->
+                                    </select>
+                                </section>
+                                <section class="modalBtn-container">
+                                    <button type="submit" class="saveBtnModal">Remove</button>
+                                </section>
+                            </form>
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+            <!-- Remove Liked Playlist Modal -->
+            <section class="modal fade" id="removeLikedPlaylistModal" tabindex="-1" aria-hidden="true">
+                <section class="modal-dialog">
+                    <section class="modal-content">
+                        <section class="modal-header">
+                            <h5 class="modal-title">Remove Playlist</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </section>
+                        <section class="modal-body">
+                            <form id="removeLikedPlaylistForm">
+                                <section class="mb-3">
+                                    <label for="likedplaylistSelect" class="form-label">Select Playlist:</label>
+                                    <select class="form-select" id="likedplaylistSelect" aria-label="Select Playlist">
+                                        <!-- Playlist will be populated dynamically here -->
+                                    </select>
+                                </section>
+                                <section class="modalBtn-container">
+                                    <button type="submit" class="saveBtnModal">Remove</button>
+                                </section>
+                            </form>
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+        <script src="js/playlist/createPlaylist.js" type="module"></script>
+        <script src="js/playlist/loadPlaylists.js" type="module"></script>
+        <script src="js/playlist/removePlaylist.js" type="module"></script> 
+        <script src="js/playlist/loadLikedPlaylist.js" type="module"></script>
+        <script src="js/playlist/removeLikedPlaylist.js" type="module"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    
+    <%- include('partials/head.ejs') %>
+
+    <body>
+
+        <%- include('partials/sidebar.ejs') %>
+        <section class="profile-container">
+            
+                <form id="searchForm">
+                    <section class="search-bar">
+                        <img src="/images/userImage.png" width="25" height="25">
+                        <input id="searchInput" class="searchInput" placeholder="What do yu want to listen?">
+                    </section>
+                </form>
+
+                <section class="results" id="searchResults">
+                    <!-- Search results will be displayed here -->
+                    <section class="artists"></section>
+                    <section class="albums"></section>
+                    <section class="tracks"></section>
+                </section>
+                
+        </section>
+
+        <script type="module" src="js/search.js"></script>
+    </body>
+</html>

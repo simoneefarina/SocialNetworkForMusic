@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    
+    <%- include('partials/headBootstrap.ejs') %>
+
+    <body>
+
+        <%- include('partials/sidebar.ejs') %>
+
+        <section class="profile-container">
+            <h1> <%= userName %> 's Profile </h1>
+            <section class="profileinfo-container">
+               <p> Name: <%= userName %> &nbsp;&nbsp;&nbsp;&nbsp; Surname: <%= userSurname %> </p> 
+               <button class="edprimary" id="editProfileNameBtn" data-bs-toggle="modal" data-bs-target="#editProfileNameModal">Edit Name</button>
+            </section>
+            <section class="profileinfo-container">
+                <p> email: <%= userEmail %> </p> 
+                <button class="edprimary" id="editProfileEmailBtn" data-bs-toggle="modal" data-bs-target="#editProfileEmailModal">Edit Email</button>
+             </section>
+             <section class="profileinfo-container">
+                <p> Password: ***** </p> 
+                <button class="edprimary" id="modifyPassButton"">Edit Password</button>
+             </section>
+             <section class="profileinfo-container">
+                <p> Favourite genres </p> 
+                <button class="edprimary" id="modifyGenresButton" data-bs-toggle="modal" data-bs-target="#modifyGenres">Edit Genres</button>
+             </section>
+             <section class="profileinfo-container">
+                <p> Delete Account </p> 
+                <button class="deleteAccount" id="deleteAccountBtn" data-bs-toggle="modal" data-bs-target="#deleteAccount">Delete Account</button>
+             </section>
+        </section>
+
+        <!-- Edit Name Modal -->
+        <section class="modal fade" id="editProfileNameModal" tabindex="-1"  aria-hidden="true">
+            <section class="modal-dialog">
+                <section class="modal-content">
+                    <section class="modal-header">
+                        <h5 class="modal-title" id="editProfileModalLabel">Edit Name</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </section>
+                    <section class="modal-body">
+                        <form id="editNameForm">
+                            <section class="mb-3">
+                                <label for="name" class="form-label">Name: </label>
+                                <input type="text" class="form-control" id="name" value="<%= userName %>">
+                            </section>
+                            <section class="mb-3">
+                                <label for="surname" class="form-label">Surname: </label>
+                                <input type="text" class="form-control" id="surname" value="<%= userSurname %>">
+                            </section>
+                            <section class="modalBtn-container">
+                                <button type="submit" class="saveBtnModal">Save Changes</button>
+                            </section>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- Edit Email Modal -->
+        <section class="modal fade" id="editProfileEmailModal" tabindex="-1"  aria-hidden="true">
+            <section class="modal-dialog">
+                <section class="modal-content">
+                    <section class="modal-header">
+                        <h5 class="modal-title" id="editProfileModalLabel">Edit Email</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </section>
+                    <section class="modal-body">
+                        <form id="editEmailForm">
+                            <section class="mb-3">
+                                <label for="email" class="form-label">Email: </label>
+                                <input type="email" class="form-control" id="email" value="<%= userEmail %>">
+                            </section>
+                            <section class="modalBtn-container">
+                                <button type="submit" class="saveBtnModal">Save Changes</button>
+                            </section>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- Modify Genres Modal -->
+        <section class="modal fade" id="modifyGenres" tabindex="-1"  aria-hidden="true">
+            <section class="modal-dialog">
+                <section class="modal-content">
+                    <section class="modal-header">
+                        <h5 class="modal-title" id="editProfileModalLabel">Change Favourite Genres</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </section>
+                    <section class="modal-body">
+                        <form id="modifyGenresForm">
+                            <% const genresArray = ['Pop', 'Rock', 'Hip-Hop/Rap', 'Electronic/Dance', 'R&B/Soul', 'Jazz', 'Classical', 'Country', 'Reggae', 'Folk/Indie', 'Metal', 'Blues', 'World', 'Latin', 'Gospel'] %>
+                            <% let i = 0 %>
+                            <% genresArray.forEach((genre) => { %>
+                                <div class="genreGroup">
+                                    <label> <%= genre %></label>
+                                    <input class="genreCheckBox" type="checkbox" <% if (genresIsSelected[i]) { %> checked <% } %>>
+                                </div>
+                               <% i = i+1 %> 
+                            <% }) %>
+                            <section class="modalBtn-container">
+                                <button type="submit" class="saveBtnModal">Save Changes</button>
+                            </section>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <!-- Delete Account Modal -->
+        <section class="modal fade" id="deleteAccount" tabindex="-1"  aria-hidden="true">
+            <section class="modal-dialog">
+                <section class="modal-content">
+                    <section class="modal-header">
+                        <h5 class="modal-title" id="editProfileModalLabel">Delete Account</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </section>
+                    <section class="modal-body">
+                        <form id="deleteAccountForm">
+                            <p style="text-align: center;"> ATTENTION !!!</p>
+                            <p>Are you sure to delete your account?</p> 
+                            <section class="mb-3">
+                                <label for="text" class="form-label">Type CONFIRM to delete the account : </label>
+                                <input type="text" class="form-control" id="delete">
+                            </section>
+                            <section class="modalBtn-container">
+                                <button type="submit" class="saveBtnModal">Delete Account</button>
+                            </section>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <script src="js/user/nameEdit.js"></script>
+        <script src="js/user/emailEdit.js"></script>
+        <script src="js/user/deleteAccount.js"></script>
+        <script src="js/user/modifyGenres.js"></script>
+        <script >
+            document.getElementById("modifyPassButton").addEventListener("click", function() {
+                window.location.href = '/modifypassword';
+            });
+        </script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    
+    <%- include('partials/headBootstrap.ejs') %>
+
+    <body>
+
+        <%- include('partials/sidebar.ejs') %>
+        
+        <section class="profile-container">
+           <section class="header"> 
+                <h1> <%= userName %> 's Artists </h1>
+                <section class="addArtist">
+                    <button class="edprimary" id="addArtistButton" data-bs-toggle="modal" data-bs-target="#addArtistModal">Add Artist</button>
+                </section>
+            </section>
+
+            <section class="results" id="searchResults">
+                <!-- Search results will be displayed here -->
+                <section class="artists"></section>
+            </section>
+
+        </section>
+
+        <!-- Add Song Modal -->
+        <section class="modal fade" id="addArtistModal" tabindex="-1"  aria-hidden="true">
+            <section class="modal-dialog">
+                <section class="modal-content">
+                    <section class="modal-header">
+                        <h5 class="modal-title" id="addArtistModalLabel">Add Artist</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </section>
+                    <section class="modal-body">
+                        <form id="addArtistForm">
+                            <section class="mb-3">
+                                <label for="name" class="form-label">Name: </label>
+                                <input type="text" class="form-control" id="artist">
+                            </section>
+                            <section class="modalBtn-container">
+                                <button type="submit" class="saveBtnModal">Search</button>
+                            </section>
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+
+        <script src="js/artist/loadArtists.js" type="module"></script>
+        <script src="js/artist/addArtists.js" type="module"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </body>
+</html>

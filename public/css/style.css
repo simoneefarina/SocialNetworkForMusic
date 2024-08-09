@@ -1,0 +1,483 @@
+/*
+colors: 
+    #121212
+    #212121
+    #535353
+    #b3b3b3
+    #1db954
+*/
+
+body {
+    background-color: #121212;
+    font-family: sans-serif;
+}
+
+/*--- Sidebar ---*/
+
+/* Sidebar container */
+.sidebar {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 240px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    top: 0;
+    left: 0;
+    background-color: #1a1a1a; /* Dark background color */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+/* Sidebar links */
+.sidebar-info {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Link styles */
+.sidebar-info a {
+    color: #b3b3b3; /* Light text color */
+    text-decoration: none; /* Remove underline */
+    display: block; /* Make links block-level */
+    padding: 10px 20px; /* Padding for the links */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Hover effect */
+.sidebar-info a:hover {
+    background-color: #333; /* Darker background color on hover */
+    color: #fff; /* White text color on hover */
+}
+
+/*--- Sign Up and Login---*/
+
+.signupform-container {
+    max-width: 600px;
+    min-height: 360px;
+    background-color: #212121;
+    margin: 8% auto 0;
+    padding: 23px 45px 23px 23px;
+    border-radius: 25px;
+    color: #ffffff;
+}
+
+.signupform-container h3 {
+    text-align: center;
+}
+
+.signupform-container form {
+    padding: 0px 50px;
+}
+
+.signupform-container form .namesurname {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+}
+
+.signupform-container form .box-form {
+    margin-bottom: 14px;
+}
+
+.signupform-container form .box-form input {
+    background-color: #535353;
+    border-radius: 25px;
+    padding: 15px 15px;
+    border: 1px solid #ffffff;
+    outline: none;
+    width: 100%;
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.signupform-container form .box-form p {
+    margin-top: 13px;
+    text-align: left;
+}
+
+.signupform-container form .signupbutton-container {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+.signupform-container form .signupbutton-container button {
+    background-color: #1db954;
+    border-radius: 25px;
+    padding: 15px;
+    font-size: 15px;
+    border: 1px solid #ffffff;
+    outline: none;
+    width: 120px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.signupform-container form p {
+    text-align: center;
+}
+
+/*--- Profile page ---*/
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-info .logout{
+    margin-right: 50px;
+    margin-left: auto;
+}
+.profile-container {
+    height: 100%;
+    min-height: 90vh;
+    width: 81%;
+    background-color: #212121;
+    margin-left: 250px;
+    margin-top: 20px;
+    padding: 23px 45px 23px 23px;
+    border-radius: 25px;
+}
+
+.profile-container h1 {
+    color: #ffffff;
+    font-family: sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.profile-container .userinformation-container {
+    display: flex;
+    flex-direction: row;
+    gap: 60px;
+    width: 400px;
+    background-color: #535353;
+    padding: 23px 45px 23px 23px;
+    margin-top: 30px;
+    min-width: 65%;
+    border: 1px solid #b3b3b3;
+    border-radius: 25px;
+    justify-content: space-between;
+}
+
+.profile-container .userinformation-container .userinformation {
+    color: #ffffff;
+    margin-left: -140px;
+}
+
+.profile-container .userinformation-container a {
+    color: #b3b3b3;
+    margin-left: auto;
+}
+
+/*--- Profile info page ---*/
+
+.profileinfo-container {
+    background-color: #535353;
+    padding: 23px 45px 23px 23px;
+    border-radius: 25px;
+    min-width: 45%;
+    width: 300px;
+    border: 1px solid #b3b3b3;
+    border-radius: 25px;
+    color: #ffffff;
+    justify-content: space-between;
+    display: flex;
+    align-items: center; /* Center vertically */
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.profileinfo-container:first-child {
+    margin-top: 80px;
+}
+
+.profileinfo-container p {
+    margin: 0; /* Remove default margin */
+}
+
+.profileinfo-container button {
+    margin-left: auto; /* Move the anchor to the right */
+
+    background-color: #1db954;
+    border-radius: 25px;
+    padding: 12px;
+    font-size: 12px;
+    border: 1px solid #ffffff;
+    outline: none;
+    width: 120px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.profileinfo-container .deleteAccount {
+    background-color: red;
+}
+
+
+
+/*--- Modal ---*/
+
+.modal-content {
+    background-color: #121212;
+    border: 2px solid #b3b3b3;
+    border-radius: 25px;
+    color: #fff;
+}
+
+.modal-header {
+    background-color: #535353;
+    color: #fff;
+    border-radius: 25px;
+    margin:10px;
+}
+
+.modal-title {
+    font-size: 24px;    
+}
+
+.modal-body {
+    padding: 20px;
+    color: #fff;
+}
+
+.mb-3 { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.mb-3 label {
+    margin-right: 10px;
+}
+
+.modal-footer {
+    background-color: #535353;
+    color: #fff;
+}
+
+.genreGroup {
+    background-color: #535353;
+    padding: 7px 13px 7px 7px;
+    border-radius: 15px;
+    border: 1px solid #b3b3b3;
+    border-radius: 8px;
+    color: #ffffff;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    margin-top: 10px;
+}
+
+.genreGroup label  {
+    margin: 0; /* Remove default margin */
+    margin-left: 10px;
+}
+
+/*.genreGroup input{
+    margin-left: auto;
+    margin-right: 10px;
+    border-radius: 15px;
+    border: 1px solid #b3b3b3;
+    border-radius: 8px;
+}*/
+
+.genreGroup input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: green;
+}
+
+.modalBtn-container{
+    display: flex;
+    justify-content: center; /* Horizontally center the button */
+    align-items: center; /* Vertically center the button */
+    margin-top: 20px; /* Optional: Adjust the margin as needed */
+}
+
+.modalBtn-container .saveBtnModal{
+    background-color: #1db954;
+    border-radius: 25px;
+    padding: 12px;
+    font-size: 12px;
+    border: 1px solid #ffffff;
+    outline: none;
+    width: 120px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+/*--- Modify password page ---*/
+
+.password-container {
+    background-color: #535353;
+    padding: 23px 45px 23px 23px;
+    border-radius: 25px;
+    min-width: 45%;
+    width: 300px;
+    border: 1px solid #b3b3b3;
+    border-radius: 25px;
+    color: #ffffff;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    /*Centervertically*/margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.profileinfo-container label  {
+    margin: 0; /* Remove default margin */
+}
+
+.password-container input {
+    background-color: #b3b3b3;
+    border-radius: 25px;
+    padding: 15px 15px;
+    border: 1px solid #ffffff;
+    outline: none;
+    font-size: 15px;
+    margin-top: 8px;
+}
+
+.modifyBtnPassword-container button {
+    margin-left: auto; /* Move the anchor to the right */
+
+    background-color: #1db954;
+    border-radius: 25px;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ffffff;
+    outline: none;
+    width: 180px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/*--- Favourite Artists page ---*/
+
+.addArtist{
+    margin-left: auto;
+    margin-right:50px;
+}
+
+button {
+    background-color: #1db954;
+    border-radius: 25px;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ffffff;
+    outline: none;
+    width: 180px;
+    cursor: pointer;
+    text-align: center;
+}
+
+/*--- Playlist page ---*/
+
+.header .deleteSong button {
+    background-color: red;
+    border-radius: 25px;
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ffffff;
+    outline: none;
+    width: 180px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.playlistInfo{
+    color: white;
+}
+
+
+/*--- Seacrh page ---*/
+
+.search-bar {
+    background-color: #535353;
+    padding: 10px 10px 10px 10px;
+    border-radius: 25px;
+    width: 400px;
+    border: 1px solid #b3b3b3;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 20px;
+
+}
+
+.search-bar img {
+    margin-right: 15px;
+}
+
+.search-bar .searchInput {
+    background-color: #535353;
+    color: #ffffff;
+    width: 100%;
+    margin-right: 15px;
+    border: none; 
+    outline: none;
+    height: 45px;
+    flex: 1;
+}
+
+.results{
+    color: #ffffff;
+}
+.result-item {
+    display: inline-block;
+    margin-right: 10px; /* Adjust margin between items */
+    justify-content: center; /* Align items horizontally at the center */
+    padding: 10px; /* Add padding for spacing */
+    border-radius: 8px; /* Add border radius for rounded corners */
+    box-shadow: 0px 4px 8px #111111; /* Add box shadow effect */
+    background-color: #121212;
+    width: 200px; /* Set a fixed width */
+    height: 200px;
+}
+
+.result-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+}
+
+.result-details-track {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    margin-top: 75px;
+}
+
+.result-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 5px; /* Adjust margin as needed */
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+    margin-left: 40px;
+}
+
+.result-name {
+    font-weight: bold;
+    text-align: center; /* Center the name */
+}
+
+.result-type {
+    font-style: italic;
+    text-align: center; /* Center the type */
+}

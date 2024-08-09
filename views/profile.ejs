@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    
+    <%- include('partials/head.ejs') %>
+
+    <body>
+
+        <%- include('partials/sidebar.ejs') %>
+        <section class="profile-container">
+            <h1> <%= userName %> 's Profile </h1>
+            <section class="profile-info">
+                <section class="userinformation-container">
+                    <img src="/images/userImage.png" alt="User Image" width="200" height="200"> 
+                    <section class="userinformation">
+                        <h2> <%= userName + " " + userSurname %> </h2>
+                        <br><br>
+                        <p>email <%= userEmail %> </p>
+                    </section>
+
+                    <p><a href="profileInfo">edit my profile</a></p>
+                </section>
+                <form id="logoutForm" class="logout">
+                    <button type="submit">Logout</button>
+                </form>
+            </section>
+        </section>
+
+        <script src="js/logout.js"></script>
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    
+    <%- include('partials/headBootstrapPlaylist.ejs') %>
+
+    <body>
+
+        <%- include('partials/sidebar.ejs') %>
+        
+        <section class="profile-container">
+           <section class="header"> 
+                <h1> <%= userName %> 's Playlist </h1>
+                <section class="addArtist">
+                    <button class="edprimary" id="addArtistButton" data-bs-toggle="modal" data-bs-target="#addSongModal">Add Songs</button>
+                </section>
+                <section class="deleteSong">
+                    <button class="edprimary" id="addArtistButton" data-bs-toggle="modal" data-bs-target="#removeSongModal">remove Songs</button>
+                </section>
+            </section>
+            <input type="hidden" id="playlistId" value="<%= playlistId %>">
+
+            <section class="playlistInfo"> 
+                <h2 id="playlistName"></h2>
+                <p id="playlistDescritpion"></p>
+                <section id="playlistTags"></section>
+            </section>
+
+            <br>
+
+            <section class="results" id="searchResults">
+                <!-- Search results will be displayed here -->
+                <section class="tracks"></section>
+            </section>
+
+            <!-- Add Song Modal -->
+            <section class="modal fade" id="addSongModal" tabindex="-1"  aria-hidden="true">
+                <section class="modal-dialog">
+                    <section class="modal-content">
+                        <section class="modal-header">
+                            <h5 class="modal-title" id="addSongModalLabel">Add Song</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </section>
+                        <section class="modal-body">
+                            <form id="addSongForm">
+                                <section class="mb-3">
+                                    <label for="name" class="form-label">Name: </label>
+                                    <input type="text" class="form-control" id="name">
+                                </section>
+                                <input type="hidden" id="playlistId" value="<%= playlistId %>">
+                                <section class="modalBtn-container">
+                                    <button type="submit" class="saveBtnModal">Search</button>
+                                </section>
+                            </form>
+                        </section>
+                    </section>
+                </section>
+            </section>
+
+            <!-- Remove Song Modal -->
+            <section class="modal fade" id="removeSongModal" tabindex="-1" aria-hidden="true">
+                <section class="modal-dialog">
+                    <section class="modal-content">
+                        <section class="modal-header">
+                            <h5 class="modal-title">Remove Song</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </section>
+                        <section class="modal-body">
+                            <form id="removeSongForm">
+                                <section class="mb-3">
+                                    <label for="songSelect" class="form-label">Select Song:</label>
+                                    <select class="form-select" id="songSelect" aria-label="Select Song">
+                                        <!-- Songs will be populated dynamically here -->
+                                    </select>
+                                </section>
+                                <input type="hidden" id="playlistId" value="<%= playlistId %>">
+                                <section class="modalBtn-container">
+                                    <button type="submit" class="saveBtnModal">Remove</button>
+                                </section>
+                            </form>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            
+
+        <script src="/../js/playlist/loadPlaylistInfo.js" type="module"></script>
+        <script src="/../js/playlist/loadSongs.js" type="module"></script>
+        <script src="/../js/playlist/addSongs.js" type="module"></script>
+        <script src="/../js/playlist/removeSong.js" type="module"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset=”utf-8">
+        <title> Sign Up </title>
+
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+    </head>
+    <body>
+        <section class="sidebar">
+            <section class="sidebar-info">
+                <a href="/profile">Social Network For Music</a>
+            </section>
+        </section>
+        <section class="signupform-container">
+            <h3> Sign Up </h3>
+            <form id="signupform">
+                <section class="namesurname">
+                    <section class="box-form">
+                        <label for="name"> Name </label>
+                        <input type="text" id="name" placeholder="Name" required>
+                    </section>
+                    <section class="box-form">
+                        <label for="surname"> Surname </label>         
+                        <input type="text" id="surname" placeholder="Surname" required>
+                    </section>
+                </section>
+                <section class="box-form">
+                    <label for="email"> Email </label>
+                    <input type="email" id="email" placeholder="Email" required>
+                    <p id='emailexist'></p>
+                </section>
+                <section class="box-form">
+                    <label for="password"> Password </label>
+                    <input type="password" id="password" placeholder="Password" onkeyup='check();' required>
+                </section>
+                <section class="box-form">
+                    <label for="password"> Confirm Password </label>
+                    <input type="password" id="confPassword" placeholder="Confirm Password" onkeyup='check();' required>
+                    <p id='psswcheck'></p>
+                </section>
+
+                <section class="signupbutton-container">
+                    <button class="signup-button" type="submit"> Sign Up </button>
+                </section>
+                <section>
+                    <p class="signin-link">
+                        Already have an account? <a href="login"> Sign in </a>
+                    </p>
+                </section>
+            </form>
+        </section>
+
+        <script src="js/signup.js"></script>
+    </body>
+</html>
